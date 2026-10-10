@@ -424,7 +424,7 @@ width: 100%;
 
     font-weight: 400;
 
-    font-size: clamp(75px, 13vw, 160px);
+    font-size: clamp(75px, 13vw, 130px);
 
     color: var(--gold-light);
 
