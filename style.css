@@ -251,7 +251,7 @@ width: 100%;
 
     font-family: "Great Vibes", cursive;
 
-    font-size: clamp(36px, 15vw, 65px);
+    font-size: clamp(42px, 15vw, 65px);
 
     font-weight: 400;
 
@@ -281,7 +281,7 @@ width: 100%;
 
     background: var(--gold);
 
-    margin: 30px auto;
+    margin: 20px auto;
 }
 
 .invite-text {
