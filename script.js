@@ -262,46 +262,42 @@ function revealElements() {
    BACKGROUND MUSIC
 ===================================== */
 
-const musicButton =
-    document.getElementById("musicButton");
-
-const music =
-    document.getElementById("weddingMusic");
+const musicButton = document.getElementById("musicButton");
+const music = document.getElementById("weddingMusic");
 
 let musicPlaying = false;
 
+// Music automatically play karne ki koshish
+window.addEventListener("load", function () {
 
-musicButton.addEventListener(
-    "click",
-    function () {
-
-        if (!musicPlaying) {
-
-            music.play()
-                .then(function () {
-
-                    musicPlaying = true;
-
-                    musicButton.innerText = "❚❚";
-
-                })
-                .catch(function () {
-
-                    alert(
-                        "Please add music.mp3 in the same folder."
-                    );
-
-                });
-
-        } else {
-
-            music.pause();
-
+    music.play()
+        .then(function () {
+            musicPlaying = true;
+            musicButton.innerText = "❚❚";
+        })
+        .catch(function () {
             musicPlaying = false;
-
             musicButton.innerText = "♫";
+        });
 
-        }
+});
 
+// Button se play/pause bhi kar sakte ho
+musicButton.addEventListener("click", function () {
+
+    if (music.paused) {
+        music.play()
+            .then(function () {
+                musicPlaying = true;
+                musicButton.innerText = "❚❚";
+            })
+            .catch(function () {
+                console.log("Music could not play.");
+            });
+    } else {
+        music.pause();
+        musicPlaying = false;
+        musicButton.innerText = "♫";
     }
-);
+
+});
